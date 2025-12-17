@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meu Aprendizado • JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topline">
+        <div class="badge"><span class="dot"></span> Meu Aprendizado • JavaScript</div>
+        <div class="kbdhint">Dica: pressione <span class="nav-kbd">/</span> para buscar na página</div>
+      </div>
+      <h1>O que Aprendi sobre JavaScript nas Aulas do Professor Luan</h1>
+      <p class="subtitle">
+        Durante essas aulas, descobri como funciona a tomada de decisões no JavaScript. 
+        Aprendi a fazer o código escolher diferentes caminhos dependendo das condições que eu definir.
+      </p>
+    </header>
+
+    <div class="grid">
+      <nav aria-label="Navegação">
+        <div class="nav-head">
+          <div class="nav-title">Índice</div>
+          <div class="nav-tools">
+            <button class="chip" id="btnExpand" type="button">Expandir</button>
+            <button class="chip" id="btnCollapse" type="button">Recolher</button>
+          </div>
+        </div>
+        <div class="nav-body" id="navBody">
+          <a class="nav-link" href="#intro" data-key="1"><span>Começando a Entender</span><span class="nav-kbd">1</span></a>
+          <a class="nav-link" href="#condicionais" data-key="2"><span>Tomando Decisões no Código</span><span class="nav-kbd">2</span></a>
+          <a class="nav-link" href="#ifbasico" data-key="3"><span>Meu Primeiro IF</span><span class="nav-kbd">3</span></a>
+          <a class="nav-link" href="#testelogico" data-key="4"><span>Comparando Valores</span><span class="nav-kbd">4</span></a>
+          <a class="nav-link" href="#elseif" data-key="5"><span>Múltiplas Condições</span><span class="nav-kbd">5</span></a>
+          <a class="nav-link" href="#debug" data-key="6"><span>Debugando no Console</span><span class="nav-kbd">6</span></a>
+          <a class="nav-link" href="#storage" data-key="7"><span>Salvando Dados no Navegador</span><span class="nav-kbd">7</span></a>
+          <a class="nav-link" href="#interval" data-key="8"><span>Criando um Relógio Dinâmico</span><span class="nav-kbd">8</span></a>
+          <a class="nav-link" href="#operadores" data-key="9"><span>Operadores que Conheci</span><span class="nav-kbd">9</span></a>
+          <a class="nav-link" href="#switch" data-key="0"><span>Switch - Uma Alternativa</span><span class="nav-kbd">0</span></a>
+          <a class="nav-link" href="#ternario" data-key="T"><span>Ternário - O IF Compacto</span><span class="nav-kbd">T</span></a>
+          <a class="nav-link" href="#conclusao" data-key="C"><span>O que Tirei Disso Tudo</span><span class="nav-kbd">C</span></a>
+        </div>
+      </nav>
+
+      <main>
+        <section class="card" id="intro">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+                </svg>
+                Começando a Entender
+              </h2>
+              <p>
+                Antes dessas aulas, eu sabia criar variáveis e pedir dados com <code>prompt</code>. 
+                Mas agora aprendi algo muito mais poderoso: fazer o código tomar decisões sozinho.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="note">
+              A ideia central que entendi é: <strong>uma condicional é como fazer uma pergunta ao código</strong>. 
+              "Se isso acontecer, faça aquilo. Se não, faça outra coisa." É assim que o JavaScript ganha inteligência.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="condicionais">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+                Tomando Decisões no Código
+              </h2>
+              <p>
+                Percebi que estruturas condicionais são o coração de qualquer programa. 
+                Elas permitem que eu crie lógica, regras e comportamentos diferentes baseados em situações.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="callout">
+              O professor Luan explicou com um exemplo que fez sentido: quando você sobe na balança e não gosta do número, 
+              você decide começar uma dieta. Isso é uma decisão baseada em uma condição. 
+              No código, fazemos exatamente isso com <code>if</code> e <code>else</code>.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="ifbasico">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+                Meu Primeiro IF
+              </h2>
+              <p>
+                A primeira coisa que aprendi foi a estrutura básica do <code>if</code>. 
+                É surpreendentemente simples, mas super poderoso.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <pre><code>let numero1 = 4;
+if (numero1 > 2) {
+    console.log("O número é maior que 2");
+}</code></pre>
+            <div class="note">
+              Esse foi meu primeiro código de decisão! Basicamente, estou perguntando: "esse número é maior que 2?". 
+              Se a resposta for sim (true), a mensagem aparece. Se for não (false), nada acontece.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="testelogico">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                Comparando Valores
+              </h2>
+              <p>
+                Descobri que para fazer essas perguntas ao código, eu preciso usar operadores de comparação. 
+                Eles sempre retornam <code>true</code> ou <code>false</code>.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div>
+              <div class="pillrow" aria-label="Operadores de comparação">
+                <span class="pill">==</span>
+                <span class="pill">!=</span>
+                <span class="pill">&gt;</span>
+                <span class="pill">&lt;</span>
+                <span class="pill">&gt;=</span>
+                <span class="pill">&lt;=</span>
+              </div>
+            </div>
+            <pre><code>console.log(2 + 2 == 4); // true
+console.log(2 + 2 == 5); // false</code></pre>
+            <div class="note">
+              Testei muito isso no console. É fascinante como o JavaScript responde verdadeiro ou falso para qualquer comparação que eu faça!
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="elseif">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                Múltiplas Condições
+              </h2>
+              <p>
+                Depois de entender o <code>if</code> básico, aprendi que posso encadear várias condições usando 
+                <code>else if</code> e <code>else</code>.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <pre><code>let numero = parseInt(prompt("Digite um número:"));
+if (numero > 5) {
+    console.log("O número é maior que 5");
+} else if (numero < 5) {
+    console.log("O número é menor que 5");
+} else {
+    console.log("O número é igual a 5");
+}</code></pre>
+            <div class="note">
+              Esse código cobre todas as possibilidades! O número pode ser maior, menor ou igual a 5. 
+              Aprendi que o <code>else</code> final é como um "caso contrário" - captura tudo que não foi pego antes.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="debug">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="8" y="6" width="8" height="12" rx="2" ry="2"></rect>
+                  <line x1="12" y1="2" x2="12" y2="6"></line>
+                  <line x1="12" y1="18" x2="12" y2="22"></line>
+                  <line x1="8" y1="10" x2="16" y2="10"></line>
+                  <line x1="8" y1="14" x2="16" y2="14"></line>
+                </svg>
+                Debugando no Console
+              </h2>
+              <p>
+                Uma das coisas mais úteis que aprendi foi usar o console do navegador para testar e depurar meu código.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="note">
+              <strong>Como abrir o console:</strong>
+              <ul>
+                <li><strong>Windows:</strong> Ctrl + Shift + J</li>
+                <li><strong>Mac:</strong> Cmd + Option + J</li>
+              </ul>
+              O console é meu melhor amigo agora. Sempre que algo não funciona, eu jogo um <code>console.log()</code> 
+              para ver o que está acontecendo.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="storage">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                Salvando Dados no Navegador
+              </h2>
+              <p>
+                Fiquei impressionado quando aprendi sobre <code>localStorage</code>. 
+                Você pode salvar informações que ficam guardadas mesmo depois de fechar a página!
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="split">
+              <div>
+                <div class="note"><strong>Para salvar</strong></div>
+                <pre><code>localStorage.setItem("nome", "Gleidson");</code></pre>
+              </div>
+              <div>
+                <div class="note"><strong>Para recuperar</strong></div>
+                <pre><code>let nome = localStorage.getItem("nome");
+console.log(nome); // Gleidson</code></pre>
+              </div>
+            </div>
+            <button class="btn" type="button" id="btnStorage">Testar localStorage aqui</button>
+            <div class="note" id="storageResult" style="display:none"></div>
+            <div class="note">
+              Isso abre muitas possibilidades! Posso criar sistemas de login simples, 
+              salvar preferências do usuário, e muito mais.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="interval">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Criando um Relógio Dinâmico
+              </h2>
+              <p>
+                Aprendi sobre <code>setInterval</code>, uma função que executa código repetidamente em intervalos definidos. 
+                Usei isso para criar um relógio que atualiza a cada segundo!
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="clock" role="group" aria-label="Relógio ao vivo">
+              <strong>Relógio (atualiza a cada 1s):</strong>
+              <div id="relogio">--:--:--</div>
+            </div>
+            <pre><code>function mostrarHora() {
+    let agora = new Date();
+    document.getElementById("relogio").innerHTML = agora.toLocaleTimeString();
+}
+setInterval(mostrarHora, 1000);</code></pre>
+            <div class="note">
+              Ver esse relógio funcionando foi um momento "uau" para mim. 
+              O <code>setInterval</code> executa a função <code>mostrarHora</code> a cada 1000 milissegundos (1 segundo).
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="operadores">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="8" y1="10" x2="16" y2="10"></line>
+                  <line x1="8" y1="14" x2="16" y2="14"></line>
+                  <line x1="8" y1="18" x2="16" y2="18"></line>
+                </svg>
+                Operadores que Conheci
+              </h2>
+              <p>
+                Durante as aulas, vi vários tipos de operadores. Cada um tem seu propósito específico.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="note"><strong>Operadores de Atribuição</strong> - para dar valores às variáveis</div>
+            <pre><code>let numero = 2;
+numero += 2; // agora numero vale 4 (mesma coisa que numero = numero + 2)</code></pre>
+
+            <div class="note"><strong>Incremento e Decremento</strong> - atalhos práticos</div>
+            <pre><code>let numero = 2;
+numero += 2; // número agora é 4
+numero -= 2; // número agora é 2</code></pre>
+
+            <div class="note"><strong>Operadores Aritméticos</strong> - matemática básica</div>
+            <div class="pillrow">
+              <span class="pill">+</span>
+              <span class="pill">-</span>
+              <span class="pill">*</span>
+              <span class="pill">/</span>
+              <span class="pill">%</span>
+            </div>
+            <pre><code>let soma = 2 + 3; // 5
+let subtracao = 5 - 2; // 3
+let multiplicacao = 2 * 3; // 6
+let divisao = 6 / 2; // 3
+let modulo = 5 % 2; // 1 (resto da divisão)</code></pre>
+
+            <div class="note"><strong>Operadores de Comparação</strong> - testei bastante estes!</div>
+            <pre><code>console.log(2 == "2");  // true (compara só o valor)
+console.log(2 === "2"); // false (compara valor E tipo)
+console.log(2 != "2");  // false
+console.log(2 !== "2"); // true
+console.log(2 > 1);     // true
+console.log(2 < 3);     // true
+console.log(2 >= 2);    // true
+console.log(2 <= 1);    // false</code></pre>
+
+            <div class="note">
+              <strong>Importante:</strong> Aprendi a diferença entre <code>==</code> e <code>===</code>. 
+              O duplo igual compara só valores, o triplo compara valor E tipo. É melhor usar o triplo para evitar bugs!
+            </div>
+
+            <div class="note"><strong>Operadores Lógicos</strong> - para combinar condições</div>
+            <div class="pillrow">
+              <span class="pill">&&</span>
+              <span class="pill">||</span>
+              <span class="pill">!</span>
+            </div>
+            <pre><code>let a = true;
+let b = false;
+
+console.log(a && b); // false (E - ambos precisam ser true)
+console.log(a || b); // true (OU - pelo menos um precisa ser true)
+console.log(!a);     // false (NÃO - inverte o valor)</code></pre>
+
+            <div class="note">
+              Os operadores lógicos são poderosos! Posso fazer perguntas complexas tipo: 
+              "a idade é maior que 18 E tem CNH?" usando <code>(idade > 18 && temCNH)</code>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="switch">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+                Switch - Uma Alternativa
+              </h2>
+              <p>
+                Quando tenho muitos valores específicos para checar, aprendi que o <code>switch</code> é mais organizado que vários <code>if</code> encadeados.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="note"><strong>Estrutura básica</strong></div>
+            <pre><code>switch (expressao) {
+    case valor1:
+        // Código se expressao === valor1
+        break;
+    case valor2:
+        // Código se expressao === valor2
+        break;
+    default:
+        // Código se nenhum case foi atendido
+}</code></pre>
+
+            <div class="note"><strong>Exemplo prático que testei</strong></div>
+            <pre><code>let modo = prompt("Digite um modo: dark, red ou blue:");
+
+switch (modo) {
+    case "dark":
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        break;
+    case "red":
+        document.body.style.backgroundColor = "red";
+        document.body.style.color = "white";
+        break;
+    case "blue":
+        document.body.style.backgroundColor = "blue";
+        document.body.style.color = "white";
+        break;
+    default:
+        document.body.style.backgroundColor = "pink";
+        document.body.style.color = "black";
+}</code></pre>
+
+            <div class="callout">
+              <strong>Aprendi da maneira difícil:</strong> o <code>break</code> é essencial! 
+              Sem ele, o JavaScript continua executando os próximos cases mesmo depois de encontrar uma correspondência. 
+              Foi um bug que passei um tempão procurando até o professor explicar!
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="ternario">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Ternário - O IF Compacto
+              </h2>
+              <p>
+                O operador ternário foi uma das últimas coisas que aprendi. É uma forma super compacta de escrever um <code>if...else</code> simples.
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="note"><strong>Sintaxe</strong></div>
+            <pre><code>condição ? valorSeVerdadeiro : valorSeFalso</code></pre>
+
+            <div class="note"><strong>Exemplo básico</strong></div>
+            <pre><code>let modo = "dark";
+let mensagem = modo ? "Está definida" : "Não está definida";
+console.log(mensagem); // "Está definida"</code></pre>
+
+            <div class="note"><strong>Comparando as duas formas</strong></div>
+            <div class="split">
+              <div>
+                <strong>Com if...else tradicional:</strong>
+                <pre><code>let modo = "dark";
+let mensagem;
+if (modo) {
+    mensagem = "Está definida";
+} else {
+    mensagem = "Não está definida";
+}
+console.log(mensagem);</code></pre>
+              </div>
+              <div>
+                <strong>Com ternário:</strong>
+                <pre><code>let modo = "dark";
+let mensagem = modo 
+    ? "Está definida" 
+    : "Não está definida";
+console.log(mensagem);</code></pre>
+              </div>
+            </div>
+
+            <div class="note"><strong>Valores falsos e verdadeiros</strong></div>
+            <div class="note">
+              Uma coisa importante que aprendi: nem tudo no JavaScript é <code>true</code> ou <code>false</code> explicitamente, 
+              mas tudo pode ser avaliado como verdadeiro ou falso.
+            </div>
+            
+            <div class="split">
+              <div>
+                <strong>Valores "falsos" (falsy):</strong>
+                <div class="pillrow">
+                  <span class="pill">false</span>
+                  <span class="pill">0</span>
+                  <span class="pill">""</span>
+                  <span class="pill">null</span>
+                  <span class="pill">undefined</span>
+                  <span class="pill">NaN</span>
+                </div>
+              </div>
+              <div>
+                <strong>Valores "verdadeiros" (truthy):</strong>
+                <div class="pillrow">
+                  <span class="pill">"texto"</span>
+                  <span class="pill">123</span>
+                  <span class="pill">[]</span>
+                  <span class="pill">{}</span>
+                </div>
+              </div>
+            </div>
+
+            <pre><code>console.log(Boolean(0));       // false
+console.log(Boolean(""));      // false
+console.log(Boolean("texto")); // true
+console.log(Boolean(123));     // true
+console.log(Boolean([]));      // true (array vazio é true!)
+console.log(Boolean({}));      // true (objeto vazio é true!)</code></pre>
+
+            <div class="note">
+              Isso me pegou de surpresa no começo. Um array vazio <code>[]</code> ou objeto vazio <code>{}</code> 
+              são considerados verdadeiros! Só preciso lembrar dos 6 valores que são falsos.
+            </div>
+
+            <div class="note"><strong>Exemplos mais elaborados</strong></div>
+            <pre><code>// Checando igualdade
+let modo = "dark";
+let mensagem = (modo === "dark") 
+    ? "Modo escuro ativado" 
+    : "Modo claro ativado";
+console.log(mensagem); // "Modo escuro ativado"
+
+// Ternário aninhado (funciona, mas pode ficar confuso)
+let numero = 5;
+let tipoNumero = (numero > 0) 
+    ? "Positivo" 
+    : (numero < 0) 
+        ? "Negativo" 
+        : "Zero";
+console.log(tipoNumero); // "Positivo"</code></pre>
+
+            <div class="note">
+              O professor disse que ternário aninhado funciona, mas não é muito legível. 
+              Para casos complexos, é melhor usar <code>if...else if...else</code> normal.
+            </div>
+          </div>
+        </section>
+
+        <section class="card" id="conclusao">
+          <div class="head">
+            <div>
+              <h2>
+                <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                  <path d="M4 22h16"></path>
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2z"></path>
+                </svg>
+                O que Tirei Disso Tudo
+              </h2>
+              <p>
+                Essas aulas mudaram completamente minha forma de pensar sobre programação. 
+                Antes, meu código era linear - fazia uma coisa após a outra. 
+                Agora ele pode tomar decisões!
+              </p>
+            </div>
+          </div>
+          <div class="body">
+            <div class="note">
+              <strong>Meus principais aprendizados:</strong>
+              <ul>
+                <li>Condicionais são a base da lógica de programação</li>
+                <li>Existem várias formas de escrever a mesma lógica (<code>if</code>, <code>switch</code>, ternário)</li>
+                <li>O console é meu melhor amigo para debug</li>
+                <li>Operadores lógicos permitem criar condições complexas</li>
+                <li>localStorage e setInterval abrem um mundo de possibilidades</li>
+              </ul>
+            </div>
+            
+            <div class="callout">
+              O professor Luan sempre diz: "Repetição é a mãe do domínio". 
+              Então agora vou praticar criando pequenos projetos usando tudo que aprendi. 
+              Calculadoras, jogos de adivinhação, sistemas de login simples... as possibilidades são infinitas!
+            </div>
+            
+            <div class="footer">
+              <span>Projeto criado como registro do meu aprendizado 📚</span>
+              <button class="btn" type="button" id="btnTop">Voltar ao topo</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção de Créditos -->
+        <section class="credits">
+          <h2 class="credits-title">
+            <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            Sobre este Projeto
+          </h2>
+          <div class="credits-info">
+            <p>
+              <strong>Desenvolvido por:</strong> Guilherme Queiroz <span class="badge-dev">@guielihan</span>
+            </p>
+            <p>
+              <strong>Orientação:</strong> Professor Luan - GoDev
+            </p>
+            <p>
+              Este projeto documenta meu aprendizado sobre JavaScript, estruturas condicionais, operadores e conceitos fundamentais da linguagem. 
+              Criei esta página para consolidar o conhecimento e ter um material de consulta personalizado.
+            </p>
+          </div>
+          
+          <div class="social-links">
+            <a href="mailto:guielihan@outlook.com" class="social-link" title="Enviar e-mail">
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              guielihan@outlook.com
+            </a>
+            
+            <a href="https://github.com/Guielihan" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              GitHub
+            </a>
+            
+            <a href="https://discord.com/users/guielihan" target="_blank" rel="noopener noreferrer" class="social-link" title="Discord">
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0 a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              Discord
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
